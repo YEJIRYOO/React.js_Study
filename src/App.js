@@ -1,25 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+function App(){
+  return(
+    <div>유예지</div>
   );
-}
+    //함수 -> jsx 템플릿 return
+} 
 
-export default App;
+export default App; 
+//extport default로 내보낸 이후 다른 곳에서 import 하여 사용
