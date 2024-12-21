@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from 'axios';
 
 function App(){
   const[title,setTitle]=useState('');
@@ -6,6 +7,11 @@ function App(){
   //log출력 함수
   const onSubmit=()=>{
     console.log(title,body)
+    //db로의 post request
+    axios.post('http://localhost:3001/posts',{
+      title,
+      body
+    })
   };
 
   return(
