@@ -2,6 +2,11 @@ import { useState } from "react";
 
 function App(){
   const[title,setTitle]=useState('');
+  const[body,setBody]=useState('');
+  //log출력 함수
+  const onSubmit=()=>{
+    console.log(title,body)
+  };
 
   return(
     //부트스트랩의 container클래스
@@ -17,7 +22,21 @@ function App(){
           }
         />
       </div>
-      <button className="btn btn-primary">
+      <div className="mb-3">
+        <label className="form-label">Body</label>
+        <textarea
+          className="form-control"
+          value={body}
+          onChange={(event)=>{
+            setBody(event.target.value);
+          }}
+          rows="20"
+        />
+      </div>
+      <button 
+        className="btn btn-primary"
+        onClick={onSubmit}
+      >
         Post
       </button>
     </div>
