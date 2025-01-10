@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "hello",
       "body": "body"
     },
@@ -9,6 +9,21 @@
       "id": "a0e5",
       "title": "hello",
       "body": "body2"
+    },
+    {
+      "id": "92c8",
+      "title": "DKr",
+      "body": "rkkr"
+    },
+    {
+      "id": "ecd7",
+      "title": "DKr",
+      "body": "rkkr"
+    },
+    {
+      "id": "72f9",
+      "title": "DKr",
+      "body": "rkkr"
     }
   ]
 }

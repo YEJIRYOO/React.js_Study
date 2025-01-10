@@ -1,51 +1,24 @@
-import { useState } from "react";
-import axios from 'axios';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+}from 'react-router-dom';
+import NavBar from './components/NavBar';
+import routes from './routes';
 
 function App(){
-  const[title,setTitle]=useState('');
-  const[body,setBody]=useState('');
-  //log출력 함수
-  const onSubmit=()=>{
-    console.log(title,body)
-    //db로의 post request
-    axios.post('http://localhost:3001/posts',{
-      title,
-      body
-    })
-  };
-
   return(
-    //부트스트랩의 container클래스
-    <div className="container">
-      <div className="mb-3">
-        <label className="form-label">Title</label>
-        <input 
-          className="form-control"
-          value={title}
-          onChange={(event)=>{
-            setTitle(event.target.value);
-          }
-          }
-        />
+    <Router>
+      <NavBar />
+      <div className="container">
+        <Switch>
+          {routes.map((route)=>{
+            return <Route key={route.path} exact path={route.path} component={route.component} />
+          })}
+        </Switch>
       </div>
-      <div className="mb-3">
-        <label className="form-label">Body</label>
-        <textarea
-          className="form-control"
-          value={body}
-          onChange={(event)=>{
-            setBody(event.target.value);
-          }}
-          rows="20"
-        />
-      </div>
-      <button 
-        className="btn btn-primary"
-        onClick={onSubmit}
-      >
-        Post
-      </button>
-    </div>
+    </Router>
+
 
   );
 }
